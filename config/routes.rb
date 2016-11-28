@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/index'
+
   get 'welcome/index'
   root 'welcome#index'
 

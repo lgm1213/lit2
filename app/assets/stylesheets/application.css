@@ -20,12 +20,6 @@ body {
 }
 
 
- .entry {
- 	border: solid 1px black;
- 	background: orange;
- 	width: 50%;
- 	float: left;
- }
 
  .header {
  	display: table;
@@ -46,14 +40,29 @@ body {
  	vertical-align: middle;
  }
 
-.demos {
+ .box1 {
+ 	border: solid 1px black;
+ 	background: orange;
+ 	float: left;
+ }
+
+.box2 {
  	color: black;
  	font: 2em;
  	border: 1px solid;
  	overflow: hidden;
  }
 
- .info {
+ .container > div {
  	border: 1px solid;
- 	float: left;
+ 	display: inline-block;
+}
+
+.container {
+	border: solid; 1px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+.loginlink{
 }
