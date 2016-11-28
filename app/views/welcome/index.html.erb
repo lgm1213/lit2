@@ -1,0 +1,21 @@
+<div class="header"><span id="title">It's Lit</span>    <% if current_user %>
+        Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <% end %></div>
+<dl>
+  <div class="info"><% @profile.businesses.each do |value| %>
+    <dd><br>
+    <div class = "entry">
+    <h1><a href ="#"><%= value.name %></a></h1><br>
+    <img src="<%=value.image_url%>"><br></div>
+    <br><div class="demos">
+    <%= value.location.display_address %><br>
+    <%= value.location.coordinate.latitude %>
+    <%= value.location.coordinate.longitude %><br>
+    <%= value.location.neighborhoods %><br>
+    Phone:<%= value.display_phone %><br></div>
+    <hr>
+  <% end %>
+  </div>
+</dl>
