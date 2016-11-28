@@ -24,6 +24,7 @@ body {
  	border: solid 1px black;
  	background: orange;
  	width: 50%;
+ 	float: left;
  }
 
  .header {
@@ -49,8 +50,10 @@ body {
  	color: black;
  	font: 2em;
  	border: 1px solid;
+ 	overflow: hidden;
  }
 
  .info {
  	border: 1px solid;
+ 	float: left;
 }
