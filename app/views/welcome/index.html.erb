@@ -14,6 +14,7 @@
     <%= biz.location.coordinate.latitude %>
     <%= biz.location.coordinate.longitude %><br>
     Phone:<%= biz.display_phone %><br>
+    Director: <%= rating_for biz, "original_score" %>
     <hr>
   <% end %><br></div></div>
 </dl>
