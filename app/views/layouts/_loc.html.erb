@@ -1,8 +1,7 @@
-<%= render partial: 'layouts/form' %>
-
-<dl class="intro-views">
+<dl>
+<% if @profile %>
     <% @profile.businesses.each do |biz| %>
-
+    
     <dd>
     <h1><%= link_to biz.name, places_path %></a></h1><br>
     <img src="<%= biz.image_url %>"><br>
@@ -12,8 +11,12 @@
     <%= biz.location.coordinate.latitude %>
     <%= biz.location.coordinate.longitude %><br>
     Phone:<%= biz.display_phone %><br>
-    Director: <%= rating_for biz, "original_score" %>
     <hr>
-  <% end %>
 
+  <% end %>
+        <% else %>
+    no places yo
+<% end %>
+
+  
 </dl>
