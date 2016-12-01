@@ -28,8 +28,8 @@
 }
 
 form {
-  padding: 1rem;
-  background: #fff;
+  padding: 0rem;
+  background: white;
   border-radius: 0.25rem;
   box-shadow: 0rem 0.3rem 1rem 0.1rem rgba(0,0,0,0.35);
 }
@@ -78,22 +78,9 @@ input[type=submit] {
 }
 
 .main {
-  margin: -2.5rem auto 0rem;
-  width: 16rem;
-  .extras {
-    text-align: center;
-    font-size: 0.8rem;
-    margin-top: 1rem;
-    a {
-      text-decoration: none;
-      font-weight: 300;
-      color: lighten($primaryColour, 25%);
-      &:hover {
-        color: #fff;
-        text-decoration: underline;
-      }
-    }
-  }
+  width: 80%;
+  padding-left: 20%;
+  padding-top: 30%;
 }
 input#email:focus {
     outline: none;
@@ -101,7 +88,7 @@ input#email:focus {
     border-bottom: 3px solid #800020;
   }
 input#email {
-  width: 92%;
+  width: 100%;
   border: 0;
   border-style: none;
   box-shadow: none;
@@ -115,7 +102,7 @@ input#password:focus {
     border-bottom: 3px solid #800020;
   }
 input#password {
-  width: 92%;
+  width: 100%;
   border: 0;
   border-style: none;
   box-shadow: none;
@@ -124,15 +111,15 @@ input#password {
               padding 0.5s ease;
 }
 
-/*.landing {
+.landing {
   background-color: black;
-}*/
+}
 body {
   background-color: black;
 }
 
 .extras {
-  padding-left: 103px;
+  padding-left: 88px;
 }
 
 .brief {
@@ -168,12 +155,12 @@ body {
 
 .bruh{
       margin: auto;
-      margin-top: 80%;
-      width: 70%;
+      margin-top: 50%;
+      width: 80%;
 }
 input.signups {
   height: 50px;
-  width: 95%;
+  width: 100%;
   font-size: 2rem;
   border: 0;
   border-style: none;
@@ -188,17 +175,29 @@ input:focus {
   border-bottom: 3px solid #800020;
 }
 
+section.topslot2{
+  background-color: black;
+}
 
 .topslot2 {
-  background-image: url("http://i.imgur.com/0AsQVIY.jpg");
+  background-image: url("http://i.imgur.com/0AsQVIY.jpg?2");
   max-width: 100%;
   height: auto;
   background-repeat: no-repeat;
   background-color: darken($primaryColour,5%);
   background-position: top;
   background-size: contain;
-  padding: 1rem 0rem 6rem 0rem;}
+  padding: 1rem 0rem 5rem 0rem;}
 }
 input#signupbutton {
-  font-size: 3rem;
+  font-size: 1rem;
+}
+
+.bruh{
+
+}
+
+img {
+  vertical-align: middle;
+margin-top: 15%;
 }

@@ -6,12 +6,12 @@ class UsersController < ApplicationController
   # def self.create_with_omniauth(auth)
   #   create! do |user|
   #     user.provider = auth['provider']
-  #     user.uid = auth['uid']
+  #     user.uid = auth['uid'
   #     user.name = auth['info']['name']
   #   end
 
-    User.create()
-  end
+  #   User.create()
+  # end
   def index
     @users = User.all
   end
