@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  validates :provider, presence: true
+  validates :name, presence: true
+  
   # GET /users
   # GET /users.json
 
