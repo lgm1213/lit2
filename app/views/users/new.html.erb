@@ -5,25 +5,23 @@
 <%= link_to 'Back', users_path %> -->
 
 
-<h1>Sign Up!</h1>
-
-<%= form_for :user, url: '/users' do |f| %>
-
-  Name:<br> 
-  <%= f.text_field :name %></label><br>
+<section class="topslot2">
+<div class='bruh'>
+  <%= form_for @user do |f|  %>
+  <%= f.text_field :name, placeholder:"full name" , class:"signups"%>
   <br>
-  Email:<br> 
-  <%= f.text_field :email %><br>
   <br>
-  Password:<br>
-  <%= f.password_field :password %><br>
+  <%= f.email_field :email, placeholder:"e-mail", class:"signups" %>
   <br>
-  Password Confirmation:<br>
-  <%= f.password_field :password_confirmation %><br>
   <br>
-  <%= f.submit "Submit" %><br>
+  <%= f.password_field :password, placeholder:"password", class:"signups" %>
+  <br>
+  <br>
+  <%= f.password_field :password_confirmation, placeholder:"confirm password",
+   class:"signups" %>
+  <br>
+  <%= f.submit "Sign Up", id:"signupbutton" %><br>
   <br>
 <% end %>
 </div>
-
-
+</section>

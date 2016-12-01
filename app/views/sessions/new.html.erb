@@ -1,12 +1,31 @@
-<h1>Login</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<div class="landing">
+<section class="topslot">
+	<div class="wrapper">
 
-<%= form_tag '/login' do %>
+		<div class="brief">
+			<h1></h1>
+      <p><h1><span id="verb">
+				<img src="http://i.imgur.com/ENU5OMS.png" alt="Smiley face" height="175" width="175">
+			</span><h1></p>
+		</div>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+	</div>
+</section>
 
-<% end %>
+<!-- <section> -->
+	<div class="main">
+    <%= form_tag "/login" do %>
+      <%= text_field_tag :email, "", placeholder: "email" %>
+      <%= password_field_tag :password, "", placeholder: "password" %>
+      <div class="signup-fields">
+        <!-- <input id="email" placeholder="email" name="email" type="email" value="" /> -->
+      </div>
+      <%= submit_tag "Log In" %>
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+    <% end %>
+
+    <div class="extras">
+			<%= link_to "Sign Up", new_user_path, id: "signup" %>
+    </div>
+	</div>

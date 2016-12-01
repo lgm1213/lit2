@@ -66,3 +66,11 @@ body {
 
 .loginlink{
 }
+
+input#signupbutton {
+  font-size: 3rem;
+}
+
+input.signups {
+	font-size: 2rem;
+}

@@ -1,0 +1,204 @@
+
+.topslot {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('http://i.imgur.com/pZtNJr5.jpg');
+  max-width: 100%;
+  height: auto;
+  background-color: darken($primaryColour,20%);
+  background-position: center;
+  background-size: cover;
+  padding: 1rem 0rem 6rem 0rem;}
+
+.brief {
+  display: block;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 2rem 0rem 0rem;
+  h1 {
+    font-size: 5rem;
+    margin: 0rem;
+  }
+  p {
+    margin: 0rem;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.09rem;
+  }
+}
+
+form {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0rem 0.3rem 1rem 0.1rem rgba(0,0,0,0.35);
+}
+
+input {
+  margin-bottom: 1rem;
+  display: block;
+  @include box-sizing(border-box);
+}
+
+input:not([type=submit]){
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.15rem;
+  border: 2px solid lighten($primaryColour,5%);
+  box-shadow: 0rem 0.25rem 0.25rem 0rem rgba(0,0,0,0.15) inset;
+  font-size: 1.5rem;
+  font-weight: 300;
+  width: 100%;
+}
+
+input[type=submit] {
+  border: 0rem;
+  width: 100%;
+  background-color: #800020;
+  color: white;
+  margin-bottom: 0rem;
+  font-size: 1.4rem;
+  padding: 0.3rem 0rem;
+}
+
+#signup.is-on {
+  color: #fff;
+}
+.signup-fields {
+  // display: none;
+}
+
+.signup-fields {
+  height: 0;
+  opacity: 0;
+  &.is-on {
+    opacity: 1;
+    height: 60px;
+  }
+}
+
+.main {
+  margin: -2.5rem auto 0rem;
+  width: 16rem;
+  .extras {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    a {
+      text-decoration: none;
+      font-weight: 300;
+      color: lighten($primaryColour, 25%);
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+input#email:focus {
+    outline: none;
+    padding: 2%;
+    border-bottom: 3px solid #800020;
+  }
+input#email {
+  width: 92%;
+  border: 0;
+  border-style: none;
+  box-shadow: none;
+  border-bottom: 1px solid #800020;
+  transition: border-bottom 0.3s ease,
+              padding 0.5s ease;
+}
+input#password:focus {
+    outline: none;
+    padding: 2%;
+    border-bottom: 3px solid #800020;
+  }
+input#password {
+  width: 92%;
+  border: 0;
+  border-style: none;
+  box-shadow: none;
+  border-bottom: 1px solid #800020;
+  transition: border-bottom 0.3s ease,
+              padding 0.5s ease;
+}
+
+/*.landing {
+  background-color: black;
+}*/
+body {
+  background-color: black;
+}
+
+.extras {
+  padding-left: 103px;
+}
+
+.brief {
+  font-family: 'Bungee Shade', cursive;
+  color: black;
+}
+
+.signups {
+  width: 95%
+}
+
+@media only screen and (max-device-width: 600px) {
+  form .signups{
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.25rem;
+  }
+  form input {
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.15rem;
+    border: 2px solid lighten($primaryColour,5%);
+    box-shadow: 0rem 0.25rem 0.25rem 0rem rgba(0,0,0,0.15) inset;
+    font-size: 1.5rem;
+    font-weight: 300;
+    width: %;
+  }
+}
+
+#titlesignup{
+
+}
+
+.bruh{
+      margin: auto;
+      margin-top: 80%;
+      width: 70%;
+}
+input.signups {
+  height: 50px;
+  width: 95%;
+  font-size: 2rem;
+  border: 0;
+  border-style: none;
+  box-shadow: none;
+  border-bottom: 1px solid #800020;
+  transition: border-bottom 0.3s ease,
+              padding 0.5s ease;
+}
+input:focus {
+  outline: none;
+  padding: 2%;
+  border-bottom: 3px solid #800020;
+}
+
+
+.topslot2 {
+  background-image: url("http://i.imgur.com/0AsQVIY.jpg");
+  max-width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-color: darken($primaryColour,5%);
+  background-position: top;
+  background-size: contain;
+  padding: 1rem 0rem 6rem 0rem;}
+}
+input#signupbutton {
+  font-size: 3rem;
+}

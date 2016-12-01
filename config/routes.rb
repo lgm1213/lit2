@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/index'
+  post '/rate' => 'rater#create', :as => 'rate'
 
   get 'welcome/index'
   root 'welcome#index'
