@@ -73,4 +73,9 @@ input#signupbutton {
 
 input.signups {
 	font-size: 2rem;
+	width: 100%;
+}
+
+.landing{
+	height: 100vh;
 }
