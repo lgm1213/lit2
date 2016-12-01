@@ -194,10 +194,12 @@ input#signupbutton {
 }
 
 .bruh{
-
+   margin: auto;
+   margin-top: 50%;
+   width: 80%;
 }
 
-img {
+#lit-logo-sess{
   vertical-align: middle;
-margin-top: 15%;
+  margin-top: 15%;
 }

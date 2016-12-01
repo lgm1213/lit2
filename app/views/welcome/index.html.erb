@@ -1,11 +1,13 @@
 <%= render partial: 'layouts/form' %>
-
+<div class="row">
 <dl class="intro-views">
     <% @profile.businesses.each do |biz| %>
-    
-    <dd>
-    <h1><%= link_to biz.name, places_path %></a></h1><br>
-    <img src="<%= biz.image_url %>"><br>
+    <dd><div class="row">
+    <div class="col-xs-12">
+    <h1><%= link_to biz.name, places_path %></a></h1><br></div></div>
+    <div class="row"><div class="col-xs-4">
+    <img src="<%= biz.image_url %>" class='yelp-icon'></div>
+    <div class="col-xs-8"> 
     <%= biz.location.address.join %><br>
     <%= biz.location.city %>, <%= biz.location.state_code %> <%= biz.location.postal_code %> <br>
     Neighborhood: <%= biz.location.neighborhoods.join %><br>
@@ -13,6 +15,5 @@
     <%= biz.location.coordinate.longitude %><br>
     Phone:<%= biz.display_phone %><br>
     <hr>
-  <% end %>
-  
+  <% end %><br></div></div>
 </dl>

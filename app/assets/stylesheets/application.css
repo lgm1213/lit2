@@ -16,12 +16,12 @@
 body {
 	margin: 0;
 	border: 0;
-	padding: 0;
+	padding-top: 35px;
 }
 
 
 
- .header {
+/* .header {
  	display: table;
 	width: 100%;
 	height: 100px;
@@ -51,7 +51,7 @@ body {
  	font: 2em;
  	border: 1px solid;
  	overflow: hidden;
- }
+ }*/
 
  .container > div {
  	border: 1px solid;
@@ -62,9 +62,6 @@ body {
 	border: solid; 1px;
 	text-align: center;
 	margin: 0px auto;
-}
-
-.loginlink{
 }
 
 input#signupbutton {
