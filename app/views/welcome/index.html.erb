@@ -1,23 +1,21 @@
-<div class="header"><span id="title">It's Lit</span>    <div class="loginlink"><% if current_user %>
+<% if current_user %>
         Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
         <% else %>
         <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-        <% end %></div></div>
+        <% end %>
 <dl>
-  <div class="display"><% @profile.businesses.each do |value| %>
+    <% @profile.businesses.each do |biz| %>
     
-    <dd class="container"><br>
-    <div class = "box1">
-    <h1><a href ="#"><%= value.name %></a></h1><br>
-    <img src="<%=value.image_url%>"><br></div>
-    <br><div class="box2">
-    <%= value.location.display_address %><br>
-    <%= value.location.coordinate.latitude %>
-    <%= value.location.coordinate.longitude %><br>
-    <%= value.location.neighborhoods %><br>
-    Phone:<%= value.display_phone %><br></div>
+    <dd>
+    <h1><%= link_to biz.name, places_path %></a></h1><br>
+    <img src="<%= biz.image_url %>"><br>
+    <%= biz.location.address.join %><br>
+    <%= biz.location.city %>, <%= biz.location.state_code %> <%= biz.location.postal_code %> <br>
+    Neighborhood: <%= biz.location.neighborhoods.join %><br>
+    <%= biz.location.coordinate.latitude %>
+    <%= biz.location.coordinate.longitude %><br>
+    Phone:<%= biz.display_phone %><br>
     <hr>
   <% end %>
-  </div>
+  
 </dl>
-<p>See More?</p>
