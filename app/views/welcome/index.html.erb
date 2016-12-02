@@ -4,7 +4,7 @@
     <% @profile.businesses.each do |biz| %>
     <dd><div class="row">
     <div class="col-xs-12">
-    <h1><%= link_to biz.name, places_path %></a></h1><br></div></div>
+    <h2><center><%= link_to biz.name, places_path %></a></center></h2><br></div></div>
     <div class="row"><div class="col-xs-4">
     <img src="<%= biz.image_url %>" class='yelp-icon'></div>
     <div class="col-xs-8"> 
@@ -13,8 +13,6 @@
     Neighborhood: <%= biz.location.neighborhoods.join %><br>
     <%= biz.location.coordinate.latitude %>
     <%= biz.location.coordinate.longitude %><br>
-    Phone:<%= biz.display_phone %><br>
-    Director: <%= rating_for biz, "original_score" %>
     <hr>
   <% end %><br></div></div>
 </dl>

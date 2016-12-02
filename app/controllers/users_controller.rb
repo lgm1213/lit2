@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
      if @user.save
+      flash[:success] = "It's time to get LIT"
       session[:user_id] = @user.id
       redirect_to '/'
     else
