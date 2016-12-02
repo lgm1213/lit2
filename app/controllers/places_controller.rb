@@ -1,20 +1,15 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_filter :authorize
-
+  include YelpTools
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
-    client = Yelp::Client.new({
-      consumer_key: ENV["CONSUMER_KEY"],
-      consumer_secret: ENV["CONSUMER_SECRET"],
-      token: ENV["TOKEN"],
-      token_secret: ENV["TOKEN_SECRET"]
-    })
-    parameters = { term: "Nightlife", limit: 3 }
-    @profile = client.search('33127', parameters)
   end
+
+  def self.saved_places
+    
+  end  
   
 
   # GET /places/1
@@ -80,5 +75,8 @@ class PlacesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
       params.require(:place).permit(:name, :address, :phone)
+    end
+    def yelp_parameters(terms,limits)
+      { term: terms, limit: limits}
     end
 end

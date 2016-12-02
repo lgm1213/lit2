@@ -14,31 +14,12 @@
 
   <tbody>
     <% @places.each do |place| %>
-    <%= link_to 'Edit', edit_place_path(@place) %> |
+    <%= link_to 'Edit', edit_place_path(place) %> |
     <%= link_to 'Back', places_path %>
-    <div class="row">
-      <div class="small-2 large-2 columns">
-        <%= imdb_style_rating_for @place, current_user%>
-      </div>
-      <br>
-      <div class="small-2 large-4 columns">
-        <% if current_user %>
-          Atmosphere: <%= rating_for @place, "atmosphere" %>
-          <br>
-          Drinks: <%= rating_for @place, "drinks" %>
-          <br>
-          Wait Time: <%= rating_for @place, "wait_time" %>
-          <br>
-          Cost: <%= rating_for @place, "cost" %>
-          <br>
-          Music: <%= rating_for @place, "music" %>
-        <% end %>
-      </div>
-    </div>
       <tr>
         <td><%= place.name %></td>
         <td><%= place.address %></td>
-        <td><%= place.phone %></td>
+        <td><%= place.yelp_id %></td>
         <td><%= link_to 'Show', place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>

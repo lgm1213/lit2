@@ -7,7 +7,9 @@
     <img src="<%= biz.image_url %>"><br>
     <%= biz.location.address.join %><br>
     <%= biz.location.city %>, <%= biz.location.state_code %> <%= biz.location.postal_code %> <br>
+    <% if biz.location.neighborhoods %>
     Neighborhood: <%= biz.location.neighborhoods.join %><br>
+    <% end %>
     <%= biz.location.coordinate.latitude %>
     <%= biz.location.coordinate.longitude %><br>
     Phone:<%= biz.display_phone %><br>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
    before_action :set_user, only: [:show, :edit, :update, :destroy]
+  require 'bcrypt'
   # GET /users
   # GET /users.json
 
@@ -37,8 +38,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
      if @user.save
       flash[:success] = "It's time to get LIT"
+      log_in @user
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to @user
     else
       redirect_to '/signup'
     end

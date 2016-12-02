@@ -6,7 +6,7 @@
 		<div class="brief">
 			<h1></h1>
       <p><h1><span id="verb">
-				<img src="http://i.imgur.com/ENU5OMS.png" alt="Smiley face" height="200" width="200">
+				<img src="http://i.imgur.com/ENU5OMS.png" alt="Smiley face" height="200" width="200" id="lit-logo-sess">
 			</span><h1></p>
 		</div>
 
@@ -21,6 +21,7 @@
       <div class="signup-fields">
         <!-- <input id="email" placeholder="email" name="email" type="email" value="" /> -->
       </div>
+      <%= link_to('', login_path, :method => :create) %>
       <%= submit_tag "Log In" %>
 
     <% end %>

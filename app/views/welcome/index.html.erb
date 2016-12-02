@@ -1,18 +1,21 @@
 <%= render partial: 'layouts/form' %>
 <div class="row">
 <dl class="intro-views">
-    <% @profile.businesses.each do |biz| %>
+    <% @places.zip(@image_urls).each do |place, image_url| %>
     <dd><div class="row">
     <div class="col-xs-12">
-    <h2><center><%= link_to biz.name, places_path %></a></center></h2><br></div></div>
+    <h2><center><%= link_to place.name, place_path(place) %></a></center></h2><br></div></div>
     <div class="row"><div class="col-xs-4">
-    <img src="<%= biz.image_url %>" class='yelp-icon'></div>
+    <img src="<%= image_url %>" class='yelp-icon'></div>
     <div class="col-xs-8"> 
-    <%= biz.location.address.join %><br>
-    <%= biz.location.city %>, <%= biz.location.state_code %> <%= biz.location.postal_code %> <br>
-    Neighborhood: <%= biz.location.neighborhoods.join %><br>
-    <%= biz.location.coordinate.latitude %>
-    <%= biz.location.coordinate.longitude %><br>
+    <%= place.address %><br>
+    <%= place.city %>, <%= place.state_code %> <%= place.postal_code%> <br>
+    <% if place.neighborhoods %>
+    Neighborhood: <%= place.neighborhoods %><br>
+     <% end %>
+    <%= place.coordinate_latitude %>
+    <%= place.coordinate_longitude %><br>
+    <%= place.yelp_id %>
     <hr>
   <% end %><br></div></div>
 </dl>
