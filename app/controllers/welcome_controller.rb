@@ -11,8 +11,8 @@ class WelcomeController < ApplicationController
     end
     @places = Place.all
     unless session[:user_id]
-    	@places=@places.slice 0,3
-    	@image_urls=@image_url.slice 0,3
+    	@places=Place.first 3
+    	@image_urls=@image_urls.slice 0,3
     end
   end
   private
