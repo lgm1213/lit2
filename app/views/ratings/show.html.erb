@@ -1,4 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_rating_path(@rating) %> |
-<%= link_to 'Back', ratings_path %>
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @movie, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Atmospher: <%= rating_for @movie, "visual_effects" %>
+      <br>
+      Drinks: <%= rating_for @movie, "original_score" %>
+      <br>
+      Wait Time: <%= rating_for @movie, "original_score" %>
+      <br>
+      Cost: <%= rating_for @movie, "custome_design" %>
+      <br>
+      Music: <%= rating_for @movie, "custome_design" %>
+    <% end %>
+  </div>
+</div>
