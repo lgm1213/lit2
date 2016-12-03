@@ -1,35 +1,42 @@
-
-<p><h2><strong><%= @place.name %>:</strong></h2></p>
-<p><strong>Address:</strong><%= @place.address %> <%= @place.city %> <%= @place.state_code %> <%= @place.postal_code %><br>
-<strong>Neighborhood: </strong><%= @place.neighborhoods %><br>
-<strong>Phone:</strong><%= @place.phone %></p>
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'>
-    <%= render partial: 'layouts/gmaps' %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="small-2 large-2 columns">
-    <%= imdb_style_rating_for @place, current_user, cancel_hint: 'Cancel this vote!', space: true %>
+  <p><h2><strong><%= @place.name %>:</strong></h2></p>
+  <p><strong>Address:</strong><%= @place.address %> <%= @place.city %> <%= @place.state_code %> <%= @place.postal_code %><br>
+  <strong>Neighborhood: </strong><%= @place.neighborhoods %><br>
+  <strong>Phone:</strong><%= @place.phone %></p>
+  <br>
+  <%= render partial: 'layouts/iframe' %>
+  <div class="row">
+    <div class="small-2 large-2 columns">
+      <%= imdb_style_rating_for @place, current_user, cancel_hint: 'Cancel this vote!', space: true %>
+    </div>
+    <br>
+    <div class="small-2 large-4 columns">
+      <div id="hintDiv">
+      <% if current_user %>
+        <ul>
+          <li>Atmosphere:<br>  
+            <%= rating_for @place, "atmosphere", imdb_avg: true %>
+          </li>
+          <br>
+          <li>Drinks:<br>  
+            <%= rating_for @place, "drinks", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true %>
+          </li>
+          <br>
+          <li>Wait Time:<br> 
+            <%= rating_for @place, "wait_time", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, target: '#hintDiv', targetText: 'Is it Lit?' %>
+          </li>
+          <br>
+          <li>Cost: <br> 
+            <%= rating_for @place, "cost", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, target: '#hintDiv', targetText: 'Is it Lit?' %>
+          </li>
+          <br>
+          <li>Music:<br> 
+            <%= rating_for @place, "music", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, target: '#hintDiv', targetText: 'Is it Lit?' %>
+          </li>
+          <br>
+      <% end %>
+      </div>
+    </div>
   </div>
   <br>
-  <div class="small-2 large-4 columns">
-    <% if current_user %>
-      Atmosphere: <%= rating_for @place, "atmosphere", cancel: true%>
-      <br>
-      Drinks: <%= rating_for @place, "drinks", cancel: true  %>
-      <br>
-      Wait Time: <%= rating_for @place, "wait_time", cancel: true %>
-      <br>
-      Cost: <%= rating_for @place, "cost", cancel: true %>
-      <br>
-      Music: <%= rating_for @place, "music", cancel: true %>
-    <% end %>
-  </div>
-</div>
-
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+  <br>
+  <br>

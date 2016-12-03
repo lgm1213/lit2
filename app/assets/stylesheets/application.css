@@ -18,6 +18,7 @@
     padding-bottom:56.25%;
     position:relative;
     height:0;
+    border: 1px solid;
 }
 .map-responsive iframe{
     left:0;

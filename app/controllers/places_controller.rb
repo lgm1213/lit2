@@ -5,6 +5,7 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
+    @places
   end
 
   def self.saved_places
@@ -15,6 +16,7 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    binding.pry
   end
 
   # GET /places/new
