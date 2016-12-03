@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/places/:id/rate' => 'places#rate'
   post '/rate' => 'rater#create', :as => 'rate'
 
   get 'welcome/index'

@@ -16,7 +16,7 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-    binding.pry
+    # binding.pry
   end
 
   # GET /places/new
@@ -67,6 +67,11 @@ class PlacesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def rate
+    binding.pry
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

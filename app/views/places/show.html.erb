@@ -6,35 +6,34 @@
   <%= render partial: 'layouts/iframe' %>
   <div class="row">
     <div class="small-2 large-2 columns">
-      <%= imdb_style_rating_for @place, current_user, cancel_hint: 'Cancel this vote!', space: true %>
+      <%= imdb_style_rating_for @place, current_user %>
     </div>
     <br>
     <div class="small-2 large-4 columns">
-      <div id="hintDiv">
       <% if current_user %>
         <ul>
-          <li>Atmosphere:<br>  
+          <li id="atmos-rating">Atmosphere:<br>  
             <%= rating_for @place, "atmosphere", imdb_avg: true %>
           </li>
           <br>
-          <li>Drinks:<br>  
+          <li id="drink-rating">Drinks:<br>  
             <%= rating_for @place, "drinks", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true %>
           </li>
           <br>
-          <li>Wait Time:<br> 
-            <%= rating_for @place, "wait_time", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, target: '#hintDiv', targetText: 'Is it Lit?' %>
+          <li id="wait-rating">Wait Time:<br> 
+            <%= rating_for @place, "wait_time", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true %>
           </li>
           <br>
-          <li>Cost: <br> 
-            <%= rating_for @place, "cost", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, target: '#hintDiv', targetText: 'Is it Lit?' %>
+          <li id="cost-rating">Cost: <br> 
+            <%= rating_for @place, "cost", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true %>
           </li>
           <br>
-          <li>Music:<br> 
-            <%= rating_for @place, "music", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, target: '#hintDiv', targetText: 'Is it Lit?' %>
+          <li id="music-rating">Music:<br> 
+            <%= rating_for @place, "music", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true %>
           </li>
           <br>
+          <%= button_tag "Submit", onclick: "savePlaceRating()" %>
       <% end %>
-      </div>
     </div>
   </div>
   <br>
