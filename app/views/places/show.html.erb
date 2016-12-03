@@ -4,6 +4,11 @@
 <strong>Neighborhood: </strong><%= @place.neighborhoods %><br>
 <strong>Phone:</strong><%= @place.phone %></p>
 
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'>
+    <%= render partial: 'layouts/gmaps' %>
+  </div>
+</div>
 
 <div class="row">
   <div class="small-2 large-2 columns">

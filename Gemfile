@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'gmaps4rails'
+gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
 
 gem 'hirb'
 
