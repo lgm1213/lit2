@@ -17,6 +17,9 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
   end
+  def geo_address
+    [street, city, state, country].compact.join(', ')
+  end
 
   # GET /places/new
   def new

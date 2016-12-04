@@ -80,6 +80,7 @@ GEM
       faraday (~> 0.8)
       faraday_middleware (>= 0.8)
       hashie (>= 1.0, < 4.0.0)
+    geocoder (1.4.0)
     geokit (1.10.0)
     geokit-rails (2.2.0)
       geokit (~> 1.5)
@@ -210,6 +211,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails
   foursquare2
+  geocoder
   geokit-rails
   hirb
   jbuilder (~> 2.5)

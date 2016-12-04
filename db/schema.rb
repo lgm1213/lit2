@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201221019) do
+ActiveRecord::Schema.define(version: 20161204192014) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161201221019) do
     t.string   "coordinate_latitude"
     t.string   "coordinate_longitude"
     t.string   "yelp_id"
+    t.         "column_name"
   end
 
   create_table "rates", force: :cascade do |t|
