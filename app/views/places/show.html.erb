@@ -1,8 +1,22 @@
-  <p><h2><strong><%= @place.name %>:</strong></h2></p>
-  <p><strong>Address:</strong><%= @place.address %> <%= @place.city %> <%= @place.state_code %> <%= @place.postal_code %><br>
-  <strong>Neighborhood: </strong><%= @place.neighborhoods %><br>
-  <strong>Phone:</strong><%= @place.phone %></p>
-  <br>
+<%= render partial: 'layouts/form' %>
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <td><h2><strong><%= @place.name %></strong></h2></td>
+        <tr>
+          <td><strong>Address:</strong></td>
+          <td><%= @place.address %><br>
+          <%= @place.city %> <%= @place.state_code %> <%= @place.postal_code %></td>
+        </tr>
+        <tr>
+          <td><strong>Neighborhood:</strong></td>
+          <td><%= @place.neighborhoods %></td>
+        </tr>
+          <td><strong>Phone:</strong></td>
+          <td><%= @place.phone %></td>
+      </tbody>
+    </table>
+  </div>
   <%= render partial: 'layouts/iframe' %>
   <div class="row">
     <div class="small-2 large-2 columns">
@@ -39,3 +53,6 @@
   <br>
   <br>
   <br>
+
+
+      

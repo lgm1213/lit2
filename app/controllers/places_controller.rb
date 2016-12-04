@@ -16,7 +16,6 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
-    # binding.pry
   end
 
   # GET /places/new
@@ -70,6 +69,8 @@ class PlacesController < ApplicationController
 
   def rate
     binding.pry
+    @place=Place.find(params[:id])
+    @place.update_attributes(params.slice)
   end
 
 
@@ -77,6 +78,7 @@ class PlacesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_place
       @place = Place.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

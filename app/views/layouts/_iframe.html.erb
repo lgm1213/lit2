@@ -1,8 +1,8 @@
-<div class="map-responsive"
+<div class="map-responsive">
 	<iframe
-	width="600"
-  height="450"
+	width="300"
+  height="300"
   frameborder="0" style="border:0"
-	src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAlgF4bIl8uLIqhycYl1cMrpUxftD082Cw&center=<%= @place.coordinate_longitude%>,<%= @place.coordinate_latitude %>&zoom=18&maptype=roadmap" allowfullscreen>
+	src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAlgF4bIl8uLIqhycYl1cMrpUxftD082Cw&center=<%= @place.coordinate_latitude.to_f.round(4)%>,<%= @place.coordinate_longitude.to_f.round(4) %>&zoom=18&maptype=roadmap" allowfullscreen>
 	</iframe>
 </div>

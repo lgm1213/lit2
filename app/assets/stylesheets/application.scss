@@ -1,3 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+
+}
+alert-success {
+	height: 50%;
+  width: 50%;
+  text-align: center;
+}
 body {
-	padding-bottom: 80px;
+	margin: 0;
+	border: 0;
+	padding-top: 70px;
+}
+ 
+.container > div {
+ 	border: 1px solid;
+ 	display: inline-block;
+}
+
+.container {
+	border: solid 1px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+input#signupbutton {
+  font-size: 3rem;
+}
+
+input.signups {
+	font-size: 2rem;
+	width: 100%;
+}
+
+.landing{
+	height: 100vh;
 }
