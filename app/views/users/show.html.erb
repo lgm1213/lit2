@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<%= render partial: 'layouts/form' %>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -24,11 +23,4 @@
   <strong>Date of birth:</strong>
   <%= @user.date_of_birth %>
 </p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', root_path %>
