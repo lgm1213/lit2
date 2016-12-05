@@ -26,10 +26,11 @@ function initMap() {
 
 
 // SET myPosition EQUAL TO PLACE LOCATION BY ID
-
+console.log(gon.coordinateLatitude);
+console.log(gon.coordinateLongitude);
           var myPosition = {
-            lat: gon.coordinateLatitude.to_f,
-            lng: gon.coordinateLongitude.to_f
+            lat: gon.coordinateLatitude,
+            lng: gon.coordinateLongitude
           };
 
         var map = new google.maps.Map(document.getElementById('map'), {
