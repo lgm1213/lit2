@@ -39,7 +39,7 @@ alert-success {
 body {
 	margin: 0;
 	border: 0;
-	padding-top: 70px;
+	/*padding-top: 70px;*/
 }
 
 .container > div {
