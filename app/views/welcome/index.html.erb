@@ -13,7 +13,7 @@
     <div class="col-xs-12">
     <h2><center><%= link_to place.name, place_path(place) %></a></center></h2><br></div></div>
     <div class="row"><div class="col-xs-6">
-    <img src="<%= image_url %>" class='yelp-icon'></div>
+    <%=image_tag("#{place.image_url}", class: 'img-thumbnail img-responsive yelp-icon')%></div>
     <div class="col-xs-6">
     <%= place.address %><br>
     <%= place.city %>, <%= place.state_code %> <%= place.postal_code%> <br>
