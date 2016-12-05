@@ -28,8 +28,8 @@ function initMap() {
 // SET myPosition EQUAL TO PLACE LOCATION BY ID
 
           var myPosition = {
-            lat: 25.8002131,
-            lng: -80.2043848
+            lat: gon.coordinateLatitude.to_f,
+            lng: gon.coordinateLongitude.to_f
           };
 
         var map = new google.maps.Map(document.getElementById('map'), {

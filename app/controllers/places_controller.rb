@@ -29,6 +29,10 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     @place = Place.find(params[:id])
+    @coordinate_longitude = @place.coordinate_latitude
+    gon.coordinateLatitude = @coordinate_latitude
+    @coordinate_latitude =  @place.coordinate_longitude
+    gon.coordinateLongitude = @coordinate_longitude
   end
   def geo_address
     [street, city, state, country].compact.join(', ')
