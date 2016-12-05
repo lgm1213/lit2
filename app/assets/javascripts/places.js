@@ -1,3 +1,8 @@
+ $( function() {
+    $( "#accordion" ).accordion();
+  } );
+
+
 function savePlaceRating() {
   var myRating={
     atmos: $("li#atmos-rating input")[0].value,
@@ -14,3 +19,4 @@ function savePlaceRating() {
     data: myRating
   })
 }
+

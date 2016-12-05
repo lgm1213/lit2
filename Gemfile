@@ -10,6 +10,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'searchkick', '~> 1.1', '>= 1.1.2'
 gem 'geokit-rails'
 gem 'geocoder'
+gem 'rack-cors', require: 'rack/cors'
 
 
 
