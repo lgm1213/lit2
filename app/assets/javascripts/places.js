@@ -20,3 +20,28 @@ function savePlaceRating() {
   })
 }
 
+
+
+function initMap() {
+
+
+// SET myPosition EQUAL TO PLACE LOCATION BY ID
+
+          var myPosition = {
+            lat: 25.8002131,
+            lng: -80.2043848
+          };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myPosition,
+          scrollwheel: false
+        });
+
+        var marker = new google.maps.Marker({
+          position: myPosition,
+          map: map,
+          animation: google.maps.Animation.DROP
+        });
+
+      }

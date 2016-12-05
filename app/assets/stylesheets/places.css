@@ -32,3 +32,21 @@ background-color: black !important;
 ul {
   list-style-type: none;
 }
+
+#map {
+  height:400px;
+  width:100%;
+}
+
+#atmos-rating, #drink-rating, #wait-rating, #cost-rating, #music-rating {
+    text-align:center;
+}
+
+.lit-rating ul {
+  padding-left:0;
+}
+
+.lit-rating .btn {
+    display: block;
+    margin: 0 auto;
+}

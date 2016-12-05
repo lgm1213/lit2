@@ -21,13 +21,14 @@ class PlacesController < ApplicationController
   end
 
   def self.saved_places
-    
-  end  
-  
+
+  end
+
 
   # GET /places/1
   # GET /places/1.json
   def show
+    @place = Place.find(params[:id])
   end
   def geo_address
     [street, city, state, country].compact.join(', ')
