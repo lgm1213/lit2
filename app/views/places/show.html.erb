@@ -18,41 +18,38 @@
     </table>
   </div>
   <%= render partial: 'layouts/iframe' %>
-  <div class="row">
+  <!-- <div class="row">
     <div class="small-2 large-2 columns">
       <%= imdb_style_rating_for @place, current_user %>
-    </div>
+    </div> -->
     <br>
-    <div class="small-2 large-4 columns">
+    <div class="">
       <% if current_user %>
         <ul>
-          <li id="atmos-rating">Atmosphere:<br>  
-            <%= rating_for @place, "atmosphere", imdb_avg: true, stars: 5 %>
+          <li id="atmos-rating">Atmosphere:<br>
+            <%= rating_for @place, "atmosphere", cancel_hint: 'Cancel this vote!', imdb_avg: true, space:true, stars: 5, :disable_after_rate => false , star_off: "fire-off.png" , :star_on => "mid-fire.png" %>
           </li>
           <br>
-          <li id="drink-rating">Drinks:<br>  
-            <%= rating_for @place, "drinks", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 5 %>
+          <li id="drink-rating">Drinks:<br>
+            <%= rating_for @place, "drinks", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 5, :disable_after_rate => false , star_off: "fire-off.png" , :star_on => "mid-fire.png" %>
           </li>
           <br>
-          <li id="wait-rating">Wait Time:<br> 
-            <%= rating_for @place, "wait_time", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 5 %>
+          <li id="wait-rating">Service Time:<br>
+            <%= rating_for @place, "wait_time", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 5, :disable_after_rate => false , star_off: "fire-off.png" , :star_on => "mid-fire.png" %>
           </li>
           <br>
-          <li id="cost-rating">Cost: <br> 
-            <%= rating_for @place, "cost", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 3 %>
+          <li id="cost-rating">Cost: <br>
+            <%= rating_for @place, "cost", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 5, :disable_after_rate => false , star_off: "fire-off.png" , :star_on => "mid-fire.png" %>
           </li>
           <br>
-          <li id="music-rating">Music:<br> 
-            <%= rating_for @place, "music", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 5 %>
+          <li id="music-rating">Music:<br>
+            <%= rating_for @place, "music", cancel_hint: 'Cancel this vote!', imdb_avg: true, space: true, stars: 5, :disable_after_rate => false , star_off: "fire-off.png" , :star_on => "mid-fire.png" %>
           </li>
           <br>
-          <%= button_tag "Submit", onclick: "savePlaceRating()" %>
+          <%= button_tag "Submit", onclick: "savePlaceRating()", class:"btn btn-primary" %>
       <% end %>
     </div>
   </div>
   <br>
   <br>
   <br>
-
-
-      

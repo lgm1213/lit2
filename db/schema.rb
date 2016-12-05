@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20161204221326) do
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "user_name"
+    t.text     "body"
+    t.integer  "user_id"
   end
 
   create_table "overall_averages", force: :cascade do |t|
@@ -93,6 +96,7 @@ ActiveRecord::Schema.define(version: 20161204221326) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "user_id"
   end
 
 end
