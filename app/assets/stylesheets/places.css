@@ -22,11 +22,8 @@ map-responsive{
 }
 
 body {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1b1b1b+0,383838+13,4e4e4e+24,0a0a0a+47,010101+50,0d0d0d+54,959595+100 */
 background-color: black !important;
-
-
-  color: white !important;
+  color: white;
 }
 
 ul {

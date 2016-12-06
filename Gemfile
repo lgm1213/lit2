@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'gon'
 gem 'hirb'
 gem 'ratyrate'
 gem 'foursquare2'
