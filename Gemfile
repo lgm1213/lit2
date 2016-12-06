@@ -10,10 +10,12 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'searchkick', '~> 1.1', '>= 1.1.2'
 gem 'geokit-rails'
 gem 'geocoder'
-gem 'rack-cors', require: 'rack/cors'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'figaro'
 
-
-
+gem 'rack-cors', require: 'rack/cors' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0rail.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record

@@ -1,6 +1,34 @@
+ // $( function() {
+ //    $( "#lit-rating" ).accordion();
+ //  } );
+
+
  $( function() {
-    $( "#accordion" ).accordion();
+    var handle = $( "#custom-handle" );
+    $( "#slider" ).slider({
+      create: function() {
+        handle.text( $( this ).slider( "value" ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
   } );
+
+ $("#slider").slider(
+{
+            value:100,
+            min: 0,
+            max: 500,
+            step: 50,
+            slide: function( event, ui ) {
+                $( "#slider-value" ).html( ui.value );
+            }
+}
+);
+
+$( "#slider-value" ).html(  $('#slider').slider('value') );
+$('.ui-widget-content').css('background','linear-gradient(to right,  30%, orange 30%, orange 70%, green 70%, green 100%)');
 
 
 function savePlaceRating() {

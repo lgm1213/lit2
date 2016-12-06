@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
     profile=YelpTools.search('33127', yelp_parameters("Nightlife", 40))
     @image_urls=[]
     profile.businesses.each do |biz|
+        biz.image_url
       found_place=Place.find_or_create_by(name: biz.name, address: biz.location.address.flatten.join, phone: biz.phone, city: biz.location.city, state_code: biz.location.state_code, postal_code: biz.location.postal_code, neighborhoods: get_neighborhood(biz), coordinate_latitude: biz.location.coordinate.latitude, coordinate_longitude: biz.location.coordinate.longitude, yelp_id: biz.id, image_url: biz.image_url)
     # found_place.image_url=biz.image_url
     @image_urls << biz.image_url
@@ -15,6 +16,7 @@ class WelcomeController < ApplicationController
     	@image_urls=@image_urls.slice 0,3
     end
   end
+  
   private
   def yelp_parameters(terms,limits)
       { term: terms, limit: limits}
