@@ -26,23 +26,65 @@ function initMap() {
 
 
 // SET myPosition EQUAL TO PLACE LOCATION BY ID
-console.log(gon.coordinateLatitude);
-console.log(gon.coordinateLongitude);
           var myPosition = {
             lat: gon.coordinateLatitude,
             lng: gon.coordinateLongitude
           };
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 17,
           center: myPosition,
           scrollwheel: false
         });
 
+
+  // Set the content for each marker
+       var contentString =  '<h5 style="padding-bottom:0;margin-bottom:0;">' +
+                                          gon.placeName +
+                                          '</h5>' +
+                                          gon.placeAddress +
+                                          '<br/>' +
+                                          gon.placeCity + ', ' +
+                                          gon.placeState + ', ' +
+                                          gon.placePostal +
+                                          '<br/>' +
+                                          gon.placePhone +
+                                          '<br/>' // +
+                                          // '<a href="#rate" class="btn btn-warning" />Is it Lit?</a>'
+                                          ;
+
+        var infowindow = new google.maps.InfoWindow();
+
+
+
         var marker = new google.maps.Marker({
           position: myPosition,
           map: map,
-          animation: google.maps.Animation.DROP
+          animation: google.maps.Animation.DROP,
+          content: infowindow.setContent(contentString)
         });
+
+
+
+             marker.addListener('click', function() {
+                 map.setZoom(14);
+                 map.setCenter(marker.getPosition());
+               });
+
+             map.addListener('click', function() {
+               infowindow.close();
+             });
+
+
+             marker.addListener('click', function() {
+                 infowindow.open(map, this);
+                 // $('canvas').on("click", function(){
+                 //   console.log('marker clicked')
+                 // });
+
+             })
+
+
+             infowindow.open(map, marker)
 
       }

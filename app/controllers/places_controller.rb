@@ -33,6 +33,18 @@ class PlacesController < ApplicationController
     gon.coordinateLatitude = @coordinate_latitude
     @coordinate_longitude =  @place.coordinate_longitude.to_f
     gon.coordinateLongitude = @coordinate_longitude
+    @place_name =  @place.name
+    gon.placeName = @place_name
+    @place_address =  @place.address
+    gon.placeAddress = @place_address
+    @place_phone = @place.phone
+    gon.placePhone = @place_phone
+    @place_city = @place.city
+    gon.placeCity = @place_city
+    @place_state =  @place.state_code
+    gon.placeState = @place_state
+    @place_postal = @place.postal_code
+    gon.placePostal = @place_postal
   end
   def geo_address
     [street, city, state, country].compact.join(', ')
