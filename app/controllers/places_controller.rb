@@ -48,12 +48,10 @@ class PlacesController < ApplicationController
     gon.placeState = @place_state
     @place_postal = @place.postal_code
     gon.placePostal = @place_postal
+    @rating = Rating.new
   end
-  def geo_address
-    [street, city, state, country].compact.join(', ')
-  end
-
-  # GET /places/new
+  
+    # GET /places/new
   def new
     @place = Place.new
   end
@@ -102,18 +100,10 @@ class PlacesController < ApplicationController
     end
   end
 
-  def rate
-    binding.pry
-    @place=Place.find(params[:id])
-    @place.update_attributes(params.slice)
-  end
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
       @place = Place.find(params[:id])
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

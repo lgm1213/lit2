@@ -21,11 +21,12 @@ Rails.application.routes.draw do
   get '/places' => 'welcome#index'
   post '/places/:id/rate' => 'places#rate'
   
+  post '/get_users_id' => 'users#get_users_id'
   get '/signup' => 'users#new'
 
   post '/users' => 'users#create'
 
-  post '/rate' => 'rater#create', :as => 'rate'
+  post '/ratings' => 'ratings#create', :as => 'rate'
 
   # get 'auth/facebook/callback', to: 'sessions#create'
   # get 'auth/failure', to: redirect('/')

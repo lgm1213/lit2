@@ -1,0 +1,86 @@
+<div class="ratings-container">
+    <div id="ratingdiv">
+      <!--Here put a hidden field with the business id so you can pass it in the ajax post -->
+      <!-- I hard coded it here. Define it in controller and use erb tag to print it in-->
+      <input id="place" type="hidden" value="<%= @place.id %>">
+
+      <!-- These can be defined in the controller -->
+      <% fire_off_path = 'fire-off1.png' %>
+      <% ids = ['one', 'two', 'three', 'four', 'five'] %>
+      <% ids.each do |img_id| %>      
+      <div><img src="<%= image_path(fire_off_path) %>" class="undone" id="<%= img_id %>" ></div>
+        <% end %>
+    </div>
+    <script type="text/JavaScript">
+
+      $(document).ready(function (){
+         var user_id = 'user_id': $.ajax({
+                          type: "POST",
+                          url: "/get_users_id"
+                          }).done(function() {
+                          console.log(current_user)
+                          console.log('current_user')
+                        });
+          console.log("hello")
+         $('#ratingdiv .undone').on("click", function(e){
+           e.preventDefault();
+           var bigStar = '<%= image_path('big-star.png') %>',
+               flameOut = '<%= image_path('fire-off1.png') %>';
+           var lookup = {
+             'one': 1,
+             'two': 2,
+             'three': 3,
+             'four': 4,
+             'five': 5
+           },
+           lookupId = {
+             1: $('#one'),
+             2: $('#two'),
+             3: $('#three'),
+             4: $('#four'),
+             5: $('#five')
+           },
+           toggle = {};
+           toggle[bigStar] = flameOut;
+           toggle[flameOut] = bigStar;
+           
+          var place_id = $('#place').val();
+          var clickedElementId = $(this).attr('id'),
+              number = lookup[clickedElementId],
+              rating = {
+                'rating': number, 
+                'place_id': place_id
+              };
+              
+          console.log(rating);
+          // submit to server
+          $.post('/ratings', rating)
+          // toggle the first one
+          if ( number === 1 ){
+            var src = $(this).attr('src');
+            var newSrc = toggle[src];
+            $(this).attr('src', toggle[src]);
+            if (newSrc === flameOut){
+              // set rating to nil
+              $.post('/ratings', {'rating': null} )
+               for (i=2; i <=5; i++){
+                lookupId[i].attr('src', flameOut);
+               }
+            }
+          };
+          for (var i=2; i <= number; i++){
+            if ( i === 2 ) {
+              lookupId[1].attr('src', bigStar);
+            };
+            var clickedElement = lookupId[i];
+            $(clickedElement).attr('src', bigStar);
+            for(var n=i+1; n <= 5; n++){
+              var unClickElement = lookupId[n];
+              $(unClickElement).attr('src', flameOut);
+            }
+          }
+         });
+      });
+
+    </script>
+</div>

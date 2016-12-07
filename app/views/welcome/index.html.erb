@@ -1,31 +1,11 @@
-    <%= render partial: 'layouts/navbar' %>
-        <% if !current_user %>
-    <div class="jumbotron">
-        <h1>Is It Lit?</h1>
-        <p>Learn if venues or events in you area are poppin.</p>
-        <p><%= link_to "Sign Up To See!", signup_path, class: "btn btn-primary btn-lg" %></p>
-    </div>
-        <% end %>
-    <div class="row">
-        <dl class="intro-views">
+<!--     <%= render partial: 'layouts/navbar' %>      -->
         <% @places.zip(@image_urls).each do |place, image_url| %>
-        <dd><div class="row">
-    <div class="col-xs-12">
-        <h2><center><%= link_to place.name, place_path(place) %></a></center></h2><br></div></div>
-    <div class="row">
-        <div class="col-xs-6">
-            <%=image_tag("#{place.image_url}", class: 'img-thumbnail img-responsive yelp-icon')%></div>
-        <div class="col-xs-6">
-            <%= place.address %><br>
-            <%= place.city %>, <%= place.state_code %> <%= place.postal_code%> <br>
-            <% if place.neighborhoods %>
-        Neighborhood: <%= place.neighborhoods %><br>
-            <% end %>
-            <%= link_to 'Map it!', 'http://www.google.com/maps/place/#{place.coordinate_latitude},#{place.coordinate_longitude}', :target => "_blank" %>
-            <hr>
-            <% end %><br>
-            </div>
-        </div>
-    </dl>
-
-
+        <%= link_to place.name, place_path(place) %><br>
+        <%=image_tag("#{place.image_url}", class: 'yelp-icon')%>
+        <%= place.address %>
+        <%= place.city %>, <%= place.state_code %> <%= place.postal_code%>
+        <% if place.neighborhoods %>
+        Neighborhood: <%= place.neighborhoods %>
+        <% end %>
+        <%= link_to 'Map it!', 'http://www.google.com/maps/place/#{place.coordinate_latitude},#{place.coordinate_longitude}', :target => "_blank" %><br>
+        <% end %>

@@ -4,18 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
-  # def self.create_with_omniauth(auth)
-  #   create! do |user|
-  #     user.provider = auth['provider']
-  #     user.uid = auth['uid'
-  #     user.name = auth['info']['name']
-  #   end
-
-  #   User.create()
-  # end
   def index
     redirect_to '/'
-
   end
 
   # GET /users/1
@@ -45,7 +35,9 @@ class UsersController < ApplicationController
     else
       redirect_to '/signup'
     end
-
+    def get_user_id
+      format.json{current_user: current_user.id}
+    end
     # respond_to do |format|
     #   if @user.save
     #     format.html { redirect_to @user, notice: 'User was successfully created.' }

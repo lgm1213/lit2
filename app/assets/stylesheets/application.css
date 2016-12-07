@@ -14,9 +14,6 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 .map-responsive{
     overflow:hidden;
     padding-bottom:56.25%;
