@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require jquery.raty
-//= require ratyrate
+//= require jquery
 //= require turbolinks
+//= require materialize-sprockets
+//= require materialize/extras/nouislider
 //= require_tree

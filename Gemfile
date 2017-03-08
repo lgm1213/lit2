@@ -15,6 +15,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'materialize-sass'
 
 gem 'rack-cors', require: 'rack/cors' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
